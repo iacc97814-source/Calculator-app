@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
+  <title>Calculator by Sahil shivani dhako ritu level h </title>
 
   <style>
     * {
@@ -19,12 +20,25 @@
       font-family: Arial, sans-serif;
     }
 
+    .app {
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .brand {
+      color: white;
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
     .calculator {
-      width: 330px;
+      width: 100%;
       background: #1f2937;
       padding: 20px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     #display {
@@ -76,45 +90,58 @@
 
 <body>
 
-  <div class="calculator">
-    <input type="text" id="display" value="0" readonly>
+  <div class="app">
 
-    <div class="buttons">
-      <button class="clear" onclick="clearDisplay()">AC</button>
-      <button onclick="deleteLast()">⌫</button>
-      <button onclick="percentage()">%</button>
-      <button class="operator" onclick="addToDisplay('/')">÷</button>
+    <div class="brand">
+      Calculator by Sahil
+    </div>
 
-      <button onclick="addToDisplay('7')">7</button>
-      <button onclick="addToDisplay('8')">8</button>
-      <button onclick="addToDisplay('9')">9</button>
-      <button class="operator" onclick="addToDisplay('*')">×</button>
+    <div class="calculator">
 
-      <button onclick="addToDisplay('4')">4</button>
-      <button onclick="addToDisplay('5')">5</button>
-      <button onclick="addToDisplay('6')">6</button>
-      <button class="operator" onclick="addToDisplay('-')">−</button>
+      <input type="text" id="display" value="0" readonly>
 
-      <button onclick="addToDisplay('1')">1</button>
-      <button onclick="addToDisplay('2')">2</button>
-      <button onclick="addToDisplay('3')">3</button>
-      <button class="operator" onclick="addToDisplay('+')">+</button>
+      <div class="buttons">
 
-      <button onclick="addToDisplay('0')">0</button>
-      <button onclick="addToDisplay('.')">.</button>
-      <button class="equal" onclick="calculate()">=</button>
+        <button class="clear" onclick="clearDisplay()">AC</button>
+        <button onclick="deleteLast()">⌫</button>
+        <button onclick="percentage()">%</button>
+        <button class="operator" onclick="addToDisplay('/')">÷</button>
+
+        <button onclick="addToDisplay('7')">7</button>
+        <button onclick="addToDisplay('8')">8</button>
+        <button onclick="addToDisplay('9')">9</button>
+        <button class="operator" onclick="addToDisplay('*')">×</button>
+
+        <button onclick="addToDisplay('4')">4</button>
+        <button onclick="addToDisplay('5')">5</button>
+        <button onclick="addToDisplay('6')">6</button>
+        <button class="operator" onclick="addToDisplay('-')">−</button>
+
+        <button onclick="addToDisplay('1')">1</button>
+        <button onclick="addToDisplay('2')">2</button>
+        <button onclick="addToDisplay('3')">3</button>
+        <button class="operator" onclick="addToDisplay('+')">+</button>
+
+        <button onclick="addToDisplay('0')">0</button>
+        <button onclick="addToDisplay('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+      </div>
     </div>
   </div>
 
   <script>
+
     const display = document.getElementById("display");
 
     function addToDisplay(value) {
+
       if (display.value === "0") {
         display.value = value;
       } else {
         display.value += value;
       }
+
     }
 
     function clearDisplay() {
@@ -122,28 +149,35 @@
     }
 
     function deleteLast() {
+
       display.value = display.value.slice(0, -1);
 
       if (display.value === "") {
         display.value = "0";
       }
+
     }
 
     function percentage() {
+
       try {
         display.value = parseFloat(display.value) / 100;
       } catch {
         display.value = "Error";
       }
+
     }
 
     function calculate() {
+
       try {
         display.value = eval(display.value);
       } catch {
         display.value = "Error";
       }
+
     }
+
   </script>
 
 </body>
